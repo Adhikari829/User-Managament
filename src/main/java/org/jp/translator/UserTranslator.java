@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 public class UserTranslator {
 
 	@Autowired
-	private ModelMapper modelMapper;
+	private  ModelMapper modelMapper;
 	
-	public UserDto translateUserEntityToUserDto(UserEntity userEntity) {
+	public  UserDto translateUserEntityToUserDto(UserEntity userEntity) {
 		return modelMapper.map(userEntity, UserDto.class);
 		
 	}

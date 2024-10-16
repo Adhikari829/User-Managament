@@ -10,16 +10,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import jakarta.persistence.Table;
+import lombok.Data;
+
 
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+@Data
 
 @Entity
 @Table // Added a table name for clarity
 @Data
 @NoArgsConstructor
 public class UserRole {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -38,5 +43,31 @@ public class UserRole {
 
     @Column(nullable = false)
     private int status;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(nullable = false,  unique = true)
+	private String roleName;
+	
+	@Column(nullable = false)
+	private String roleDescription;
+	
+	@Column(nullable  = false)
+	private boolean canAccessMobileRequest;
+	
+	
+	@Column(nullable = false)
+	private boolean canAccessWebRequest;
+	
+	@Column(nullable = false)
+	private int status;
+	
+	
+	
+	
+	
+
 
 }

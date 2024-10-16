@@ -17,6 +17,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table // Added a table name for clarity
 public class UserEntity {
+
    @Column
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,6 +43,7 @@ public class UserEntity {
     private String password;
 
 
+<<<<<<< HEAD
 //    @OneToOne
 //    @JoinColumn(name = "user_role_id") // Set insertable and updatable to false
 //    private UserRole userRole;
@@ -103,6 +105,37 @@ public class UserEntity {
 //	public void setUserRole(UserRole userRole) {
 //		this.userRole = userRole;
 //	}
+=======
+	@Column
+	@jakarta.persistence.Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long Id;
+	
+	@Column
+	private String firstName;
+	@Column
+	private String lastName;
+	@Column
+	private Long phoneNo;
+	@Column
+	private Long roleId;
+	@Column
+	private Boolean status;
+	@Column
+	private String userEmail;
+	
+	@Column
+	private String password;
+	
+	@OneToOne
+	@JoinColumn(name = "user_role_id")  
+	private UserRole userRole;
+
+	
+	
+	
+	
+>>>>>>> f22f33fd60d5f8b47cb979d1dd007c2b4a62e450
 	
 	
 

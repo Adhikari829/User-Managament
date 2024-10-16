@@ -84,11 +84,7 @@
 			<version>1.18.34</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.main</groupId>
-			<artifactId>Ccrud</artifactId>
-			<version>1.0</version>
-		</dependency>
+
 	</dependencies>
 
 	<build>
