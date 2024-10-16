@@ -1,5 +1,6 @@
 package org.jp.controller;
 
+import org.jp.dto.Resetrequest;
 import org.jp.dto.UserDto;
 import org.jp.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +24,14 @@ public class UserController {
         return new ResponseEntity<>(saveDto, HttpStatus.CREATED);
     }
     
+    @PostMapping("/userLogin")
+    public ResponseEntity<String>  login(@RequestBody UserDto dto){
+    	return ResponseEntity.ok(userService.login(dto));
+    }
+    
+    @PostMapping("/resetPassword")
+    public ResponseEntity<String> repassword(@RequestBody Resetrequest reset){
+    	String message = userService.passwordreset(reset);
+    	return ResponseEntity.ok(message);
+    }
 }

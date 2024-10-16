@@ -20,6 +20,7 @@ public class RoleService implements RoleServiceInterface {
 	@Autowired
 	private RoleTranslater roleTranslater;
 
+	//for role create and save
 	public UserDtoReq saveRole(UserDtoReq userDtoReq) {
 
 		UserRole userRole = roleTranslater.translateRole(userDtoReq);
@@ -27,11 +28,15 @@ public class RoleService implements RoleServiceInterface {
 		return roleTranslater.translateRoleDto(savedRole);
 	}
 
+	
+	//for fetching the list of all user including role
 	public List<UserDtoRes> getDetails() {
 		return roleTranslater.translateRoleDto(roleRepo.findAll());
 
 	}
 
+	
+	//for update user role and save it in same id's
 	public UserDtoRes updateRoleByid(Long id, UserDtoReq req) {
 
 		Optional<UserRole> role = roleRepo.findById(id);

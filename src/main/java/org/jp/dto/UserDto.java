@@ -13,5 +13,6 @@ public class UserDto {
     private Long roleId;
     private Boolean status;
     private String userEmail;
+    private String password;
     private UserRole userRole;
 }

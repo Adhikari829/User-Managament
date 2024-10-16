@@ -39,6 +39,8 @@ public class UserEntity {
 
     @Column // Added unique constraint for email
     private String userEmail;
+    private String password;
+
 
 //    @OneToOne
 //    @JoinColumn(name = "user_role_id") // Set insertable and updatable to false
@@ -88,6 +90,12 @@ public class UserEntity {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 //	public UserRole getUserRole() {
 //		return userRole;
@@ -97,4 +105,5 @@ public class UserEntity {
 //	}
 	
 	
+
 }
